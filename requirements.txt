@@ -1,0 +1,4 @@
+fastapi
+uvicorn # means it is a package used to serve the fastapi application
+psutil 
+boto3
