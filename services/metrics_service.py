@@ -16,11 +16,11 @@ def get_system_metrics():
     status = "High CPU" if cpu_percent > cpu_threshold else "Healthy" # Determine system status based on CPU usage
 
     return {
-        "cpu_percent": cpu_percent, # Return the CPU usage percentage
-        "memory_percent": memory_percent, # Return the memory usage percentage
-        "disk_percent": disk_percent, # Return the disk usage percentage
-        "cpu_threshold": cpu_threshold, # Return the CPU usage threshold
-        "system_status": status # Return the system status
+        "cpu_percent": cpu_percent, 
+        "memory_percent": memory_percent, 
+        "disk_percent": disk_percent, 
+        "cpu_threshold": cpu_threshold, 
+        "system_status": status 
 
     }
 
