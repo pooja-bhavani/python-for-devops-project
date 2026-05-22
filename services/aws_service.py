@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 def get_bucket_info():
 
     s3_client = boto3.client("s3") # Create an S3 client using boto3 to interact with the AWS S3 service. This creates an S3 API client
-    buckets = s3_client.list_buckets()["Buckets"] #Fetch all buckets
+    buckets = s3_client.list_buckets()["Buckets"] 
     current_time = datetime.now(timezone.utc)
     print(current_time)
 
@@ -13,7 +13,7 @@ def get_bucket_info():
     old_buckets = []
 
     for bucket in buckets:  # Iterate through the list of buckets and extract the name of each bucket, then append it to the new_buckets list
-        bucket_name = bucket["Name"] # Extract the name of the bucket from the bucket dictionary
+        bucket_name = bucket["Name"] 
         creation_date = bucket["CreationDate"] 
         date_90_days_ago = current_time - timedelta(days=90) 
         
