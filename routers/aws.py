@@ -3,10 +3,10 @@ from fastapi import APIRouter, HTTPException  # Importing APIRouter and HTTPExce
 from services.aws_service import get_bucket_info
 
 
-router = APIRouter() # Create an APIRouter instance to define routes for the metrics endpoints
+router = APIRouter() 
 
 @router.get("/s3", status_code=200) # Define a GET endpoint at the path "/metrics"
-def get_buckets(): # Define a function that will be called when the endpoint is accessed. basically giving a name to api
+def get_buckets(): 
 
     try:
         buckets_info = get_bucket_info() # Call the get_bucket_info function to retrieve bucket information
@@ -14,5 +14,5 @@ def get_buckets(): # Define a function that will be called when the endpoint is 
     except:
         raise HTTPException(
             status_code=500, # If there is an error while retrieving the metrics, raise an HTTPException with a status code of 500 (Internal Server Error)
-            detail="Internal Server Error" # Provide a detail message for the exception
+            detail="Internal Server Error" 
         )
