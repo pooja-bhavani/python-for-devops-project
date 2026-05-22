@@ -2,17 +2,17 @@ from fastapi import APIRouter, HTTPException  # Importing APIRouter and HTTPExce
 
 from services.metrics_service import get_system_metrics
 
-router = APIRouter() # Create an APIRouter instance to define routes for the metrics endpoints
+router = APIRouter() 
 
 @router.get("/metrics", status_code=200) # Define a GET endpoint at the path "/metrics"
-def get_metrics(): # Define a function that will be called when the endpoint is accessed
+def get_metrics(): 
 
     try:
-        metrics = get_system_metrics() # Call the get_system_metrics function to retrieve system metrics
+        metrics = get_system_metrics() 
         return metrics
     except:
         raise HTTPException(
-            status_code=500, # If there is an error while retrieving the metrics, raise an HTTPException with a status code of 500 (Internal Server Error)
-            detail="Internal Server Error" # Provide a detail message for the exception
+            status_code=500, 
+            detail="Internal Server Error" 
         )
 
