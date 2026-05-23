@@ -17,5 +17,5 @@ def hello_world():
     """
     return {"message": "Hello, World! This is DevOps utilities API "} 
     
-app.include_router(metrics.router) 
+app.include_router(metrics.router) # Adds all routes from the metrics router into the main FastAPI application.
 app.include_router(aws.router, prefix="/aws")
