@@ -10,7 +10,7 @@ app = FastAPI(
     
 ) 
 
-@app.get("/") 
+@app.get("/") # define a route that handles HTTP GET requests at the root URL path
 def hello_world(): 
     """
     Returns a simple "Hello, World!" message.      # This is a basic endpoint to verify that the API is working correctly.
